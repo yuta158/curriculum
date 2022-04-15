@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>div puzzle</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/tab.css" />
+    <link rel="stylesheet" href="css/sp.css" />
+  </head>
+  <body>
+    <header class="header">header</header>
+    <main>
+      <!-- clearfix: float要素を保護し、他の要素が回り込むのを防ぐ -->
+      <div class="clearfix">
+        <div class="left">left</div>
+        <div class="right">
+          <div class="rightF">rightF</div>
+          <div class="topF">
+            <div class="top">top</div>
+            <div class="middle">middle</div>
+          </div>
+        </div>
+        <div class="bottom">bottom</div>
+      </div>
+    </main>
+    <footer class="footer">footer</footer>
+  </body>
+</html>

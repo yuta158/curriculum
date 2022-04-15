@@ -1,0 +1,70 @@
+@media screen and (max-width: 767px) {
+  body {
+    width: 300px;
+  }
+
+  .header {
+    height: 100px;
+    background-color: #141f40;
+    color: azure;
+  }
+
+  .clearfix::after {
+    content: ' ';
+    display: block;
+    clear: both;
+  }
+
+  .left {
+    background-color: #80bfa8;
+    color: azure;
+    width: 100px;
+    height: 250px;
+    float: left;
+  }
+
+  .right {
+    float: left;
+  }
+
+  .rightF {
+    background-color: #ff9e6b;
+    color: azure;
+    width: 75px;
+    height: 150px;
+    float: right;
+  }
+
+  .topF {
+    float: left;
+  }
+
+  .top {
+    background-color: #dbd400;
+    color: azure;
+    width: 125px;
+    height: 50px;
+  }
+
+  .middle {
+    background-color: #0093b7;
+    color: azure;
+    width: 125px;
+    height: 100px;
+  }
+
+  .bottom {
+    background-color: #8c2727;
+    color: azure;
+    width: 200px;
+    height: 100px;
+    float: right;
+  }
+
+  .footer {
+    background-color: #d98d30;
+    color: azure;
+    height: 100px;
+    /* clear: both; */
+  }
+}
