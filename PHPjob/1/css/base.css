@@ -1,0 +1,103 @@
+body {
+  margin: 16px;
+}
+
+@media screen and (min-width: 479px) {
+  body {
+    width: 400px;
+  }
+
+  .header {
+    height: 100px;
+    background-color: #141f40;
+    color: azure;
+    position: relative;
+  }
+
+  .three_boxes1 {
+    width: 160px;
+    height: 60px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .three_boxes1 div:first-child {
+    width: 60px;
+    height: 60px;
+    background-color: #8c2727;
+    color: azure;
+    border: 10px solid #fff;
+    box-sizing: border-box;
+    float: left;
+  }
+
+  div.box {
+    width: 50px;
+    height: 60px;
+    background-color: #8c2727;
+    color: azure;
+    border: 10px solid #fff;
+    border-left: 0;
+    box-sizing: border-box;
+    float: left;
+  }
+
+  .clearfix::after {
+    content: ' ';
+    display: block;
+    clear: both;
+  }
+
+  .left {
+    width: 150px;
+    height: 250px;
+    background-color: #80bfa8;
+    color: azure;
+    float: left;
+  }
+
+  .right {
+    width: 250px;
+    height: 250px;
+    background-color: #8c2727;
+    color: azure;
+    float: left;
+    position: relative;
+  }
+
+  .three_boxes2 {
+    width: 150px;
+    height: 170px;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+  }
+
+  div.box2 {
+    width: 150px;
+    height: 50px;
+    margin: 0px;
+    background-color: #ff863f;
+    color: azure;
+    border: 5px solid;
+    border-color: #fff;
+    box-sizing: border-box;
+  }
+
+  .three_boxes2 div:nth-child(2) {
+    width: 150px;
+    height: 50px;
+    background-color: #ff863f;
+    margin: 10px 0;
+    color: azure;
+    border: 5px solid #fff;
+    box-sizing: border-box;
+  }
+
+  .footer {
+    height: 100px;
+    background-color: #d98d30;
+    color: azure;
+  }
+}

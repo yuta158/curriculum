@@ -1,0 +1,89 @@
+@media screen and (max-width: 479px) {
+  body {
+    width: 200px;
+  }
+
+  .header {
+    background-color: #141f40;
+    color: azure;
+    height: 200px;
+    position: relative;
+  }
+
+  .three_boxes1 {
+    width: 60px;
+    height: 160px;
+    position: absolute;
+    left: 70px;
+    top: 20px;
+  }
+
+  .three_boxes1 div:first-child {
+    width: 60px;
+    height: 60px;
+    background-color: #8c2727;
+    color: azure;
+    border: 10px solid #fff;
+    box-sizing: border-box;
+  }
+
+  div.box {
+    width: 60px;
+    height: 50px;
+    background-color: #8c2727;
+    color: azure;
+    border: 10px solid #fff;
+    border-top: 0;
+    box-sizing: border-box;
+  }
+
+  .left {
+    background-color: #80bfa8;
+    color: azure;
+    width: 200px;
+    height: 100px;
+  }
+
+  .right {
+    background-color: #8c2727;
+    color: #f0ffff;
+    width: 200px;
+    height: 210px;
+    position: relative;
+  }
+
+  .three_boxes2 {
+    width: 140px;
+    height: 170px;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+  }
+
+  div.box2 {
+    width: 140px;
+    height: 50px;
+    margin: 0px;
+    background-color: #ff863f;
+    color: azure;
+    border: 5px solid #fff;
+    box-sizing: border-box;
+  }
+
+  .three_boxes2 div:nth-child(even) {
+    width: 140px;
+    height: 50px;
+    margin: 10px 0;
+    background-color: #ff863f;
+    color: azure;
+    border: 5px solid #fff;
+
+    box-sizing: border-box;
+  }
+
+  .footer {
+    background-color: #d98d30;
+    color: azure;
+    height: 100px;
+  }
+}
