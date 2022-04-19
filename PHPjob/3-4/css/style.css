@@ -1,0 +1,33 @@
+body {
+  background-color: gray;
+  color: #fff;
+}
+
+h1 {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+hr {
+  border-style: none;
+  border-top: 4px solid;
+}
+
+form {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.answer {
+  text-align: center;
+}
+
+.btn {
+  border-radius: 16px;
+  border: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+  opacity: 80%;
+}
