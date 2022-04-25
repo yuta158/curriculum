@@ -1,0 +1,49 @@
+body {
+  width: 1000px;
+  height: auto;
+}
+
+/* header */
+.flex {
+  display: flex;
+}
+
+img {
+  width: 200px;
+  height: 120px;
+  background-color: #add8e6;
+}
+
+.header_top {
+  width: 800px;
+  height: 60px;
+  background-color: #87ceed;
+  text-align: right;
+}
+
+.header_bottom {
+  width: 800px;
+  height: 60px;
+  background-color: #0ff;
+  text-align: right;
+}
+
+/* main */
+table {
+  margin: 10px auto;
+}
+
+.table_header {
+  background-color: #87ceed;
+}
+
+.table_data {
+  background-color: #e0ffff;
+}
+
+/* footer */
+.footer {
+  width: 1000px;
+  height: 50px;
+  background-color: #00ced1;
+}

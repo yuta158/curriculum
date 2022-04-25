@@ -7,14 +7,13 @@ function connect()
 {
     try {
         // dbh : database handler
-        $dbh = new PDO(DSN, DB_USER, DB_PW, [
+        $pdo = new PDO(DSN, DB_USER, DB_PW, [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         ]);
-        echo '接続成功';
+        return $pdo;
+        echo '<h1>' . '接続成功' . '</h1>';
     } catch (PDOException $e) {
-        echo '接続失敗' . $e->getMessage();
-        exit();
+        echo '<h1>' . '接続失敗' . ' : ' . $e->getMessage() . '</h1>';
+        die();
     }
 }
-
-?>
