@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css読み込み -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- jQuery読み込み -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="box">
+      <div src="i" class="left">
+        <img src="img/curtain_left.jpg" alt="左カーテン画像" />
+      </div>
+      <div class="right">
+        <img src="img/curtain_right.jpg" alt="右カーテン画像" />
+      </div>
+      <button id="click">クリック</button>
+    </div>
+
+    <script>
+      //  ここにjQueryを記入
+      $('#click').click(() => {
+        $('.left').toggleClass('active_left')
+        $('.right').toggleClass('active_right')
+      })
+    </script>
+  </body>
+</html>
