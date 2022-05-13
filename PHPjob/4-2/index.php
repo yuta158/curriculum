@@ -8,18 +8,18 @@ $userData = $g->getUserData();
 $postData = $g->getPostData();
 
 // category_noから文字列へ変換
-$category_no = $postData[$i]['category_no'];
 function to_category($category_no)
 {
   $g = new getData();
   $postData = $g->getPostData();
-
   for ($i = 0; $i < count($postData); $i++) {
-    if ($category_no == 1) {
+    if ($category_no === '1') {
       return '食事';
-    } elseif ($category_no == 2) {
+    }
+    if ($category_no === '2') {
       return '旅行';
-    } elseif ($category_no == 3) {
+    }
+    if ($category_no === '3') {
       return 'その他';
     }
   }
@@ -58,18 +58,17 @@ function to_category($category_no)
         <th>本文</th>
         <th>投稿日</th>
       </tr>
-      <tr class="table_data">
-        <?php for ($i = 0; $i <= count($postData) - 1; $i++) : ?>
-      <tr class="table_data">
-        <!-- 取得したデータをrowごとに分けて、rowのカラムの値を取得 -->
-        <td><?php echo $postData[$i]['id']; ?></td>
-        <td><?php echo $postData[$i]['title']; ?></td>
-        <td><?php $category_no = $postData[$i]['category_no'];
-            echo to_category($category_no); ?></td>
-        <td><?php echo $postData[$i]['comment']; ?></td>
-        <td><?php echo $postData[$i]['created']; ?></td>
-      </tr>
-    <?php endfor; ?>
+      <?php for ($i = 0; $i < count($postData); $i++) : ?>
+        <tr class="table_data">
+          <!-- 取得したデータをrowごとに分けて、rowのカラムの値を取得 -->
+          <td><?php echo $postData[$i]['id']; ?></td>
+          <td><?php echo $postData[$i]['title']; ?></td>
+          <td><?php $category_no = $postData[$i]['category_no'];
+              echo to_category($category_no); ?></td>
+          <td><?php echo $postData[$i]['comment']; ?></td>
+          <td><?php echo $postData[$i]['created']; ?></td>
+        </tr>
+      <?php endfor; ?>
     </table>
   </main>
   <footer>
