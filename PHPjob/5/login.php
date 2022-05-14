@@ -4,6 +4,12 @@ require_once 'db/dbc.php';
 $name = $_POST['name'];
 $pass = $_POST['pass'];
 
+/* ログイン名とパスワードのエスケープ処理
+   htmlspecialchars( 変換対象文字, 変換パターン, 文字コード )
+   HTMLタグを文字列として表示 */
+$name = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
+$pass = htmlspecialchars($pass, ENT_QUOTES, 'UTF-8');
+
 // セッション開始
 session_start();
 
@@ -20,12 +26,6 @@ if (!empty($_POST)) {
 
   // nameとpassword両方入力されていたら処理実行
   if (!empty($name) && !empty($pass)) {
-
-    /* ログイン名とパスワードのエスケープ処理
-       htmlspecialchars( 変換対象文字, 変換パターン, 文字コード )
-       HTMLタグを文字列として表示 */
-    $name = htmlspecialchars($name, ENT_QUOTES);
-    $pass = htmlspecialchars($pass, ENT_QUOTES);
 
     //DB接続
     $pdo = connect();

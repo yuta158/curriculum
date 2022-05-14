@@ -4,9 +4,9 @@ require_once 'db/dbc.php';
 
 $name = $_POST['name'];
 $pass = $_POST['pass'];
+
 // passwordをハッシュ化
 $hash_pass = password_hash($pass, PASSWORD_DEFAULT);
-
 
 //DB接続
 $pdo = connect();

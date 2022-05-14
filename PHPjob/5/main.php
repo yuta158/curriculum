@@ -2,9 +2,6 @@
 require_once 'db/dbc.php';
 require_once 'function.php';
 
-// セッション開始
-session_start();
-
 // セッションにuser_nameの値がなければlogin.phpにリダイレクト
 check_user_logged_in();
 
