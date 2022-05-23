@@ -1,32 +1,40 @@
 <?php
+
+// クリックジャッキング対策
+header("X-FRAME-OPTIONS: DENY");
+
 require_once 'db/dbc.php';
+require_once './function.php';
 
-$name = $_POST['name'];
-$pass = $_POST['pass'];
+// メッセージの初期化
+$msg = '';
 
-/* ログイン名とパスワードのエスケープ処理
-   htmlspecialchars( 変換対象文字, 変換パターン, 文字コード )
-   HTMLタグを文字列として表示 */
-$name = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
-$pass = htmlspecialchars($pass, ENT_QUOTES, 'UTF-8');
+if (!empty($_POST['login'])) {
+  $name = $_POST['name'];
+  $pass = $_POST['pass'];
+  // エスケープ処理
+  if (!empty($name) && !empty($pass)) {
+    h($name);
+    h($pass);
+  }
+}
 
 // セッション開始
 session_start();
 
 // POSTで送られていれば処理実行
-if (!empty($_POST)) {
+if (!empty($_POST['login'])) {
   // ログイン名が入力されていない場合の処理
   if (empty($name)) {
-    echo '※名前を入力してください' . '<br>';
+    $msg .= '※ユーザー名を入力してください' . '<br>';
   }
   // パスワードが入力されていない場合の処理
   if (empty($pass)) {
-    echo '※パスワードを入力してください' . '<br>';
+    $msg .= '※パスワードを入力してください' . '<br>';
   }
 
   // nameとpassword両方入力されていたら処理実行
   if (!empty($name) && !empty($pass)) {
-
     //DB接続
     $pdo = connect();
     try {
@@ -41,29 +49,24 @@ if (!empty($_POST)) {
       $stmt->execute();
     } catch (PDOException $e) {
       echo 'Error   :   ' . $e->getMessage();
-      // DB切断
       exit;
     }
-
     // ユーザー名がDBから1件取得できたら
     if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-      // 入力された値とDBから取得したハッシュ値が同じか判定
+      // 入力されたパスワードとDBから取得したハッシュ値が同じか判定
       if (password_verify($pass, $row['password'])) {
-
-        // セッションに検索したID,PW値を保存
+        // DBのユーザー情報をセッションに保存
         $_SESSION['user_id'] = $row['id'];
         $_SESSION['user_name'] = $row['name'];
         // main.phpにリダイレクト
         header("Location: main.php");
-        // DB切断
         exit;
       } else {
-        // パスワードが違ってた時の処理
-        echo 'パスワードに誤りがあります' . '<br>';
+        $msg = 'パスワードに誤りがあります。' . '<br>';
       }
     } else {
       //ログイン名がなかった時の処理
-      echo 'ユーザー名かパスワードに誤りがあります';
+      $msg = 'パスワードに誤りがあるか、' . "<br>" . 'アカウントの登録がありません。';
     }
   }
 }
@@ -87,6 +90,7 @@ if (!empty($_POST)) {
         <input class="sign_up_btn" type="submit" name="to_sign_up" value="新規ユーザー登録">
       </div>
     </div>
+    <p style="color: red;"><?php echo $msg; ?></p>
   </form>
   <form method="POST">
     <input class="form" type="text" name="name" placeholder="ユーザー名">

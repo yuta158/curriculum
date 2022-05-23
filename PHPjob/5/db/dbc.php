@@ -10,10 +10,8 @@ function connect()
     $pdo = new PDO(DSN, DB_USER, DB_PW, [
       PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     ]);
-    echo '<h1>' . '接続成功' . '</h1>';
     return $pdo;
   } catch (PDOException $e) {
-    echo '<h1>' . '接続失敗' . ' : ' . $e->getMessage() . '</h1>';
-    die();
+    exit;
   }
 }

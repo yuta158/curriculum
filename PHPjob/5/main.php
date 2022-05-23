@@ -22,9 +22,11 @@ try {
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <?php
-  echo 'ようこそ　' . $_SESSION['user_name'] . 'さん';
-  ?>
+  <h2>
+    <?php
+    echo 'ようこそ　' . $_SESSION['user_name'] . 'さん';
+    ?>
+  </h2>
   <title>在庫一覧画面</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
